@@ -13,7 +13,11 @@ You should _not_ be using this for any new projects. This is a deprecated formul
 
 ## How do I use it?
 
-### Installation
+Note: Because the binary bottles are no longer hosted by Homebrew, the formula will build from source.
+
+Note 2: If you are on an M1 mac, you must install Python 2 inside Rosetta 2 using a brew installation inside Rosetta 2, see intructions below!
+
+### Installation on Intel macs
 
 Add the tap to homebrew:
 
@@ -22,6 +26,8 @@ Add the tap to homebrew:
 Install as usual, if you are on an Intel Mac:
 
     brew install python@2
+
+### Installation on M1 macs
 
 If you are on an M1 Mac, use the following command to install (you might need to install brew in Rosetta 2 first):
 
@@ -38,13 +44,13 @@ Install brew in Rosetta 2 (using /usr/local/homebrew as installation path):
     echo 'alias brew_arm="/opt/homebrew/bin/brew"' >> $HOME/.zprofile
     source ~/.zprofile
 
+Your brew installation in Rosetta 2 is now available with `brew_x86`, and your normal brew installation on arm64 architecture is available with `brew_arm` or `brew`.
+
 Install Python 2 with brew inside Rosetta 2:
 
     brew_x86 install python@2
 
-Because the binary bottles are no longer hosted by Homebrew, the formula will build from source.
-
-### Uninstallation
+### Uninstallation on Intel macs
 
 To uninstall:
 
@@ -53,3 +59,13 @@ To uninstall:
 To remove this tap:
 
     brew untap odignal/python2
+
+### Uninstallation on M1 macs
+
+To uninstall:
+
+    brew_x86 uninstall python@2
+
+To remove this tap:
+
+    brew_x86 untap odignal/python2
