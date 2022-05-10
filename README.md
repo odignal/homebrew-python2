@@ -21,11 +21,15 @@ Note 2: If you are on an M1 mac, you must install Python 2 inside Rosetta 2 usin
 
 Add the tap to homebrew:
 
-    brew tap odignal/python2
+```shell
+brew tap odignal/python2
+```
 
 Install as usual, if you are on an Intel Mac:
 
-    brew install python@2
+```shell
+brew install python@2
+```
 
 ### Installation on M1 macs
 
@@ -33,22 +37,28 @@ If you are on an M1 Mac, use the following command to install (you might need to
 
 Install Rosetta 2:
 
-    /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+```shell
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+```
 
 Install brew in Rosetta 2 (using /usr/local/homebrew as installation path):
 
-    sudo mkdir /usr/local/homebrew
-    arch -x86_64 curl -L https://github.com/Homebrew/brew/tarball/master | arch -x86_64 sudo tar xz --strip 1 -C /usr/local/homebrew
-    sudo chown -R $(whoami) /usr/local/homebrew
-    echo 'alias brew_x86="arch -x86_64 /usr/local/homebrew/bin/brew"' >> $HOME/.zprofile
-    echo 'alias brew_arm="/opt/homebrew/bin/brew"' >> $HOME/.zprofile
-    source ~/.zprofile
+```shell
+sudo mkdir /usr/local/homebrew
+arch -x86_64 curl -L https://github.com/Homebrew/brew/tarball/master | arch -x86_64 sudo tar xz --strip 1 -C /usr/local/homebrew
+sudo chown -R $(whoami) /usr/local/homebrew
+echo 'alias brew_x86="arch -x86_64 /usr/local/homebrew/bin/brew"' >> $HOME/.zprofile
+echo 'alias brew_arm="/opt/homebrew/bin/brew"' >> $HOME/.zprofile
+source ~/.zprofile
+```
 
 Your brew installation in Rosetta 2 is now available with `brew_x86`, and your normal brew installation on arm64 architecture is available with `brew_arm` or `brew`.
 
 Install Python 2 with brew inside Rosetta 2:
 
-    brew_x86 install python@2
+```shell
+brew_x86 install python@2
+```
 
 Python 2 is now available via `/usr/local/homebrew/bin/python`.
 
@@ -56,18 +66,26 @@ Python 2 is now available via `/usr/local/homebrew/bin/python`.
 
 To uninstall:
 
-    brew uninstall python@2
+```shell
+brew uninstall python@2
+```
 
 To remove this tap:
 
-    brew untap odignal/python2
+```shell
+brew untap odignal/python2
+```
 
 ### Uninstallation on M1 macs
 
 To uninstall:
 
-    brew_x86 uninstall python@2
+```shell
+brew_x86 uninstall python@2
+```
 
 To remove this tap:
 
-    brew_x86 untap odignal/python2
+```shell
+brew_x86 untap odignal/python2
+```
