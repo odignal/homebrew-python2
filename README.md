@@ -29,12 +29,12 @@ Install Rosetta 2:
 `/usr/sbin/softwareupdate --install-rosetta --agree-to-license`
 
 Install brew in Rosetta 2 (using /usr/local/homebrew as installation path):
-`sudo mkdir /usr/local/homebrew`
-`arch -x86_64 curl -L https://github.com/Homebrew/brew/tarball/master | arch -x86_64 sudo tar xz --strip 1 -C /usr/local/homebrew`
-`sudo chown -R $(whoami) /usr/local/homebrew`
-`echo 'alias brew_x86="arch -x86_64 /usr/local/homebrew/bin/brew"' >> $HOME/.zprofile`
-`echo 'alias brew_arm="/opt/homebrew/bin/brew"' >> $HOME/.zprofile`
-`source ~/.zprofile`
+    sudo mkdir /usr/local/homebrew
+    arch -x86_64 curl -L https://github.com/Homebrew/brew/tarball/master | arch -x86_64 sudo tar xz --strip 1 -C /usr/local/homebrew
+    sudo chown -R $(whoami) /usr/local/homebrew
+    echo 'alias brew_x86="arch -x86_64 /usr/local/homebrew/bin/brew"' >> $HOME/.zprofile
+    echo 'alias brew_arm="/opt/homebrew/bin/brew"' >> $HOME/.zprofile
+    source ~/.zprofile
 
 Install Python 2 with brew inside Rosetta 2:
 `brew_x86 install python@2`
