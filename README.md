@@ -1,6 +1,7 @@
 # Python@2 Homebrew Tap
 
 *This repo is archived and unmaintained. Use at your own risk.*
+*This branch is updated to work with MacOS 12 Monterey.*
 
 ## Why does this exist?
 
@@ -16,11 +17,27 @@ You should _not_ be using this for any new projects. This is a deprecated formul
 
 Add the tap to homebrew:
 
-`brew tap matt-chapman/python2`
+`brew tap odignal/python2`
 
-Install as usual:
+Install as usual, if you are on an Intel Mac:
 
 `brew install python@2`
+
+If you are on an M1 Mac, use the following command to install (you might need to install brew in Rosetta 2 first):
+
+Install Rosetta 2:
+`/usr/sbin/softwareupdate --install-rosetta --agree-to-license`
+
+Install brew in Rosetta 2 (using /usr/local/homebrew as installation path):
+`sudo mkdir /usr/local/homebrew
+arch -x86_64 curl -L https://github.com/Homebrew/brew/tarball/master | arch -x86_64 sudo tar xz --strip 1 -C /usr/local/homebrew
+sudo chown -R $(whoami) /usr/local/homebrew
+echo 'alias brew_x86="arch -x86_64 /usr/local/homebrew/bin/brew"' >> $HOME/.zprofile
+echo 'alias brew_arm="/opt/homebrew/bin/brew"' >> $HOME/.zprofile
+source ~/.zprofile`
+
+Install Python 2 with brew inside Rosetta 2:
+`brew_x86 install python@2`
 
 Because the binary bottles are no longer hosted by Homebrew, the formula will build from source.
 
@@ -32,4 +49,4 @@ To uninstall:
 
 To remove this tap:
 
-`brew untap matt-chapman/python2`
+`brew untap odignal/python2`
