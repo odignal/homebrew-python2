@@ -17,18 +17,20 @@ You should _not_ be using this for any new projects. This is a deprecated formul
 
 Add the tap to homebrew:
 
-`brew tap odignal/python2`
+    brew tap odignal/python2
 
 Install as usual, if you are on an Intel Mac:
 
-`brew install python@2`
+    brew install python@2
 
 If you are on an M1 Mac, use the following command to install (you might need to install brew in Rosetta 2 first):
 
 Install Rosetta 2:
-`/usr/sbin/softwareupdate --install-rosetta --agree-to-license`
+
+    /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
 Install brew in Rosetta 2 (using /usr/local/homebrew as installation path):
+
     sudo mkdir /usr/local/homebrew
     arch -x86_64 curl -L https://github.com/Homebrew/brew/tarball/master | arch -x86_64 sudo tar xz --strip 1 -C /usr/local/homebrew
     sudo chown -R $(whoami) /usr/local/homebrew
@@ -37,7 +39,8 @@ Install brew in Rosetta 2 (using /usr/local/homebrew as installation path):
     source ~/.zprofile
 
 Install Python 2 with brew inside Rosetta 2:
-`brew_x86 install python@2`
+
+    brew_x86 install python@2
 
 Because the binary bottles are no longer hosted by Homebrew, the formula will build from source.
 
@@ -45,8 +48,8 @@ Because the binary bottles are no longer hosted by Homebrew, the formula will bu
 
 To uninstall:
 
-`brew uninstall python@2`
+    brew uninstall python@2
 
 To remove this tap:
 
-`brew untap odignal/python2`
+    brew untap odignal/python2
