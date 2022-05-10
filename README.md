@@ -50,6 +50,8 @@ Install Python 2 with brew inside Rosetta 2:
 
     brew_x86 install python@2
 
+Python 2 is now available via '/usr/local/homebrew/bin/python'.
+
 ### Uninstallation on Intel macs
 
 To uninstall:
